@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 import datas from './datas/logements.json'
 
 function App() {
@@ -7,9 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        {JSON.stringify(datas)}
-        </p>
+        <p>{JSON.stringify(datas)}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -20,7 +18,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
