@@ -1,0 +1,39 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header,
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1em 5cm;
+}
+
+footer {
+  background-color: black;
+  text-align: center;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.gallery {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.card {
+  box-shadow: var(--card-shadow);
+  border-radius: 8px;
+  overflow: hidden;
+}
