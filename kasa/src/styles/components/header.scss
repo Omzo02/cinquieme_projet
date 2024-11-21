@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  max-width: 1000px; /* Aligné avec la largeur des autres sections */
+  margin: 0 auto; /* Centre horizontalement */
+  padding: 0 1rem; /* Espacement latéral */
+
+  .logo img {
+    height: 40px;
+    width: auto; /* Garde le ratio de l'image */
+    display: block;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+
+      &:hover {
+        color: #ff6060;
+      }
+    }
+  }
+}

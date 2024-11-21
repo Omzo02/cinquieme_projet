@@ -1,14 +1,14 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Banner from '../components/Banner'
-import Gallery from '../components/Gallery'
-import Logement from '.'
+import React from 'react';
+import Banner from '../components/Banner';
+import Card from '../components/Card';
 
 const Home = () => (
-  <Layout>
+  <div className="home">
     <Banner />
-    <Gallery />
-  </Layout>
-)
+    <div className="gallery">
+      <Card />
+    </div>
+  </div>
+);
 
-export default Home
+export default Home;

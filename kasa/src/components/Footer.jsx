@@ -1,32 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import whiteLogo from '../assets/images/logo.png' // Assure-toi d’avoir un logo blanc ici
+import React from 'react';
+import logoFooter from '../assets/images/logo-footer.png';
+import '../styles/components/layout.scss';
+import '../styles/components/footer.scss';
 
-const FooterContainer = styled.footer`
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 20px;
-`
+const Footer = () => (
+  <footer className="footer">
+    <div className="footer-logo">
+      <img src={logoFooter} alt="Logo de Kasa pour le footer" />
+    </div>
+    <p>© 2024 Kasa. Tous droits réservés.</p>
+  </footer>
+);
 
-const FooterLogo = styled.img`
-  height: 40px;
-  filter: grayscale(100%) brightness(1000%); /* Assure que le logo est bien blanc */
-  margin-bottom: 10px; /* Espace entre le logo et le texte */
-`
-
-const FooterText = styled.p`
-  font-size: 14px;
-  margin: 0;
-`
-
-function Footer() {
-  return (
-    <FooterContainer>
-      <FooterLogo src={whiteLogo} alt="Logo Kasa" />
-      <FooterText>© 2022 Kasa. All rights reserved</FooterText>
-    </FooterContainer>
-  )
-}
-
-export default Footer
+export default Footer;

@@ -1,41 +1,27 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import logo from '../assets/images/logo.png'
+import logoHeader from '../assets/images/logo-header.png'
+import '../styles/components/layout.scss'
+import '../styles/components/header.scss'
 
-const HomeLogo = styled.img`
-  height: 40px;
-`
-
-const NavContainer = styled.nav`
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
-// Définir StyledLink ici
-const StyledLink = styled(Link)`
-  color: black;
-  text-decoration: none;
-  margin: 0 10px;
-
-  &:hover {
-    color: #ff6347; // Par exemple, une couleur de survol
-  }
-`
-
-function Header() {
-  return (
-    <NavContainer>
+const Header = () => (
+  <header className="header">
+    <div className="logo">
       <Link to="/">
-        <HomeLogo src={logo} alt="Logo Kasa" />
+        <img src={logoHeader} alt="Logo de Kasa pour le header" />
       </Link>
-      <div>
-        <StyledLink to="/">Accueil</StyledLink>
-        <StyledLink to="/">A propos</StyledLink>
-      </div>
-    </NavContainer>
-  )
-}
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Accueil</Link>
+        </li>
+        <li>
+          <Link to="/about">À propos</Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+)
 
 export default Header
