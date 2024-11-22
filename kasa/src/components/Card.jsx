@@ -1,6 +1,6 @@
-import React from 'react'
-import logements from '../datas/logements.json' // Import des logements
-import '../styles/components/Card.scss'
+import React from 'react';
+import logements from '../datas/logements.json'; // Import des logements
+import '../styles/components/Card.scss';
 
 const Card = () => (
   <section className="card-section">
@@ -13,6 +13,6 @@ const Card = () => (
       ))}
     </div>
   </section>
-)
+);
 
-export default Card
+export default Card;
