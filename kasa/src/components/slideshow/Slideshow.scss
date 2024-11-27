@@ -1,0 +1,70 @@
+.slideshow {
+  position: relative; /* Nécessaire pour positionner les chevrons */
+  width: 100%; /* Prend toute la largeur de son parent */
+  height: 415px; /* Hauteur fixe */
+  margin: 0 auto; /* Centre horizontalement */
+  border-radius: 10px; /* Coins arrondis */
+  overflow: hidden; /* Cache les débordements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Fond par défaut (à personnaliser) */
+
+  /* Conteneur d'image */
+  .slideshow-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Image principale */
+  .slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplit le conteneur en gardant les proportions */
+  }
+
+  /* Boutons de navigation */
+  .slideshow-button {
+    position: absolute; /* Nécessaire pour placer les chevrons */
+    top: 50%; /* Aligne verticalement au centre */
+    transform: translateY(-50%); /* Centre le bouton précisément */
+    background: none; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    cursor: pointer;
+    z-index: 10; /* Passe au-dessus de l'image */
+    padding: 0; /* Supprime les marges internes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.left {
+      left: 20px; /* Positionnement depuis le bord gauche */
+    }
+
+    &.right {
+      right: 20px; /* Positionnement depuis le bord droit */
+    }
+
+    /* Chevron */
+    .slideshow-chevron {
+      width: 30px; /* Largeur des chevrons */
+      height: auto; /* Respect des proportions */
+      filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.5)); /* Ombre portée */
+    }
+  }
+
+  /* Compteur d'images */
+  .slideshow-counter {
+    position: absolute;
+    bottom: 20px; /* Positionné en bas du carrousel */
+    left: 50%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Correction du centrage */
+    color: white; /* Couleur du texte */
+    font-size: 16px; /* Taille de la police */
+    padding: 5px 10px; /* Espacement interne */
+    border-radius: 20px; /* Coins arrondis */
+  }
+}

@@ -1,0 +1,114 @@
+.collapse {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.property-title {
+  color: #ff6060;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 500;
+  text-align: left;
+}
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #ff6060;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: left;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+// Style pour la page About (1023px)
+.about-collapse .collapse-btn {
+  width: 1023px;
+}
+
+// Style pour la page Property (520px)
+.property-collapse .collapse-btn {
+  width: 520px;
+}
+
+.collapse-btn:focus {
+  outline: none;
+}
+
+.collapse-content {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.tags-ratings {
+  display: flex;
+  justify-content: space-between; /* Espace entre les deux éléments */
+  width: 100%; /* Pour s'assurer qu'ils prennent toute la largeur du conteneur */
+}
+
+/* Conteneur pour les étoiles (ratings) à l'extrême droite */
+.ratings-container {
+  text-align: right; /* Aligne les étoiles à droite */
+  flex: end; /* Prend tout l'espace disponible à droite */
+}
+
+/* Conteneur pour les tags à l'extrême gauche */
+.tags-container {
+  text-align: left; /* Aligne les tags à gauche */
+  flex: start; /* Prend tout l'espace disponible à gauche */
+  margin: 0;
+}
+.collapse-buttons-container {
+  display: flex; /* Utilisation de flexbox */
+  justify-content: space-between; /* Espace égal entre les éléments */
+  width: 100%; /* Prend toute la largeur disponible */
+  padding: 0px; /* Espacement autour des boutons */
+  margin-top: 10px;
+}
+
+.collapse-left {
+  text-align: left; /* Aligne le bouton 'Description' à gauche */
+}
+
+.collapse-right {
+  text-align: right; /* Aligne le bouton 'Équipements' à droite */
+}
+/* Style de la div host */
+.host {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  line-height: 51.34px;
+  margin-top: 0;
+}
+
+/* Conteneur pour l'image et le nom */
+.host-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Style du cercle pour l'image de l'hôte */
+.host-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px; /* Espace entre l'image et le nom */
+}
+
+.host-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style pour le nom de l'hôte */
+.host-name {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}

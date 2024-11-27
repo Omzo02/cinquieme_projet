@@ -1,0 +1,61 @@
+.collapse {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  padding: 10px;
+  background: #ff6060;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: left;
+  color: #ffffff;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapse-btn:focus {
+  outline: none;
+}
+
+.collapse-content {
+  overflow: hidden;
+  max-height: 0; /* Le contenu est caché par défaut */
+  opacity: 0; /* Le contenu est invisible par défaut */
+  padding: 0 10px;
+  margin-top: 10px; /* Espace entre le bouton et le contenu */
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  background: #ffffff;
+}
+
+.collapse-content.open {
+  opacity: 1; /* Le contenu devient visible */
+  max-height: 1000px; /* Augmenter la valeur pour s'assurer que tout le contenu soit visible */
+}
+
+.collapse-icon {
+  transition: transform 0.3s ease; /* Animation de la rotation de la flèche */
+}
+
+.collapse-icon.open {
+  transform: rotate(
+    180deg
+  ); /* Rotation de la flèche lorsque le contenu est ouvert */
+}
+.collapse-buttons-container {
+  align-items: center;
+  border-radius: 7px;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  height: 35px;
+  justify-content: space-between;
+  padding: 1vw 1vw 1vw 2vw;
+  width: 92%;
+}
