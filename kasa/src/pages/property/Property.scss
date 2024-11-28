@@ -62,11 +62,11 @@
   margin: 0;
 }
 .collapse-buttons-container {
-  display: flex; /* Permet de placer les éléments sur une ligne */
+  display: flex;
   justify-content: space-between; /* Espace entre les deux boutons */
   width: 1240px; /* Correspond à la largeur du carousel */
   margin: 0 auto; /* Centre la div dans la page */
-  padding: 20px 0; /* Espacement vertical */
+  padding: 20px 0;
 }
 
 .collapse-left {
@@ -84,11 +84,11 @@
 
 .property-details {
   display: grid;
-  grid-template-columns: 1fr auto; /* Première colonne principale, deuxième pour l'hôte */
-  grid-template-rows: auto auto auto; /* Lignes pour le titre, la localisation et les tags/ratings */
-  column-gap: 30px; /* Espacement horizontal entre les colonnes */
-  row-gap: 15px; /* Espacement vertical entre les lignes */
-  align-items: start; /* Alignement des éléments au début de chaque ligne */
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  column-gap: 30px;
+  row-gap: 15px;
+  align-items: start;
   margin: 20px auto; /* Espacement vertical et centrage horizontal */
   max-width: 1240px; /* Alignement avec le carrousel */
   padding: 0 20px; /* Ajout d'une marge intérieure pour les petits écrans */
@@ -109,7 +109,7 @@
     grid-row: 2; /* Ligne 2 */
     font-size: 16px;
     font-weight: 400;
-    color: #ff6060; /* Couleur sombre pour le texte */
+    color: #000000;
     margin: 0;
   }
 
@@ -153,27 +153,27 @@
   /* Section Hôte */
   .host-info {
     display: flex;
-    align-items: center; /* Aligne les éléments verticalement */
-    flex-direction: row-reverse; /* Inverse l'ordre des éléments pour que l'image soit à droite et le texte à gauche */
-    gap: 10px; /* Espace entre l'image et le titre */
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
 
     .host-picture {
       width: 50px;
       height: 50px;
-      border-radius: 50%; /* Image ronde */
+      border-radius: 50%;
       overflow: hidden;
 
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Remplit le cercle sans déformation */
+        object-fit: cover;
       }
     }
 
     .host-name {
       font-size: 18px;
       font-weight: bold;
-      color: #333333; /* Texte sombre */
+      color: #ff6060; /* Texte sombre */
       margin: 0; /* Supprime les marges par défaut */
     }
   }

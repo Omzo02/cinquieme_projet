@@ -18,30 +18,37 @@ const Slideshow = ({ images }) => {
 
   return (
     <div className="slideshow">
-      {/* Bouton Précédent, visible même si une seule image */}
+      {/* Boutons Précédent et Suivant */}
       {images.length > 1 && (
-        <button className="slideshow-button left" onClick={handlePrev}>
-          <img src={ArrowLeft} alt="Précédent" className="slideshow-chevron" />
-        </button>
+        <>
+          <button
+            className="slideshow-button left"
+            onClick={handlePrev}
+            aria-label="Image précédente"
+          >
+            <img src={ArrowLeft} alt="" className="slideshow-chevron" />
+          </button>
+
+          <button
+            className="slideshow-button right"
+            onClick={handleNext}
+            aria-label="Image suivante"
+          >
+            <img src={ArrowRight} alt="" className="slideshow-chevron" />
+          </button>
+        </>
       )}
 
       {/* Image Principale */}
       <div className="slideshow-image-container">
         <img
           src={images[currentIndex]}
-          alt={`Image ${currentIndex + 1}`}
+          alt={`Slide ${currentIndex + 1}`}
           className="slideshow-image"
         />
       </div>
 
-      {/* Bouton Suivant, visible même si une seule image */}
-      {images.length > 1 && (
-        <button className="slideshow-button right" onClick={handleNext}>
-          <img src={ArrowRight} alt="Suivant" className="slideshow-chevron" />
-        </button>
-      )}
-
-      {/* Compteur, toujours visible */}
+      {/* Compteur */}
       <div className="slideshow-counter">
         {currentIndex + 1}/{images.length}
       </div>
