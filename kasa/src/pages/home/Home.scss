@@ -7,18 +7,36 @@
 
   .home-cards {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
     background: #f6f6f6;
-    width: 1240px;
-    height: auto;
-    top: 429px;
+    width: 1140px;
+    padding: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
     left: 100px;
     border-radius: 25px;
     align-items: center;
     justify-content: space-between;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-cards {
+    display: flex;
+    flex-direction: column;
+    background: #f6f6f6;
+    width: 100%;
     padding: 50px;
     margin: 0 auto;
+    margin-top: 50px;
+    left: 100px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
     gap: 50px;
+  }
+  .home {
+    width: 100%;
   }
 }

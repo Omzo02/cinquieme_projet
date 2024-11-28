@@ -1,6 +1,6 @@
 .slideshow {
   position: relative; /* Nécessaire pour positionner les chevrons */
-  width: 100%; /* Prend toute la largeur de son parent */
+  width: 1240px; /* Prend toute la largeur de son parent */
   height: 415px; /* Hauteur fixe */
   margin: 0 auto; /* Centre horizontalement */
   border-radius: 10px; /* Coins arrondis */
@@ -12,7 +12,7 @@
 
   /* Conteneur d'image */
   .slideshow-image-container {
-    width: 100%;
+    width: 1240px;
     height: 100%;
     display: flex;
     justify-content: center;

@@ -8,23 +8,22 @@
   border-radius: 25px;
   background-position: center;
   background-size: cover;
-  height: 223px;
-  padding: 20px;
-  width: 1302px;
-  margin: 43px auto;
-
-  @media screen and (max-width: 550px) {
-    margin: 20px auto;
-    height: 120px;
-  }
+  height: 168px;
+  width: 1240px;
+  margin: 0 auto;
+  padding: 20px 0;
 
   h2 {
+    display: flex;
+    justify-content: center;
     color: white; // Couleur du texte pour une meilleure visibilité
-    font-size: 48px;
+    font-size: 28px;
     font-weight: 700;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); // Améliore la lisibilité sur les images
     margin: 0;
+    width: 733px;
+    height: 68px;
   }
 }
 
