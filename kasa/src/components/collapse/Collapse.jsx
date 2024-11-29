@@ -1,35 +1,33 @@
 import React, { useState } from 'react';
-import './Collapse.scss'; // Import de la feuille de style SCSS pour l'animation
+import './Collapse.scss';
 
-const Collapse = ({ title, children, className }) => {
-  const [isOpen, setIsOpen] = useState(false); // État pour savoir si le contenu est ouvert ou fermé
+const Collapse = ({ title, children, className = '' }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleCollapse = () => {
-    setIsOpen((prevState) => !prevState); // Alterne entre ouvert et fermé
+    setIsOpen((prevState) => !prevState);
   };
 
   return (
     <div className={`collapse ${className}`}>
+      {/* Bouton pour ouvrir/fermer */}
       <button
         className="collapse-btn"
         onClick={toggleCollapse}
         aria-expanded={isOpen}
-        aria-controls={`collapse-content-${title}`} // Lier le bouton au contenu
+        aria-controls={`collapse-content-${title}`}
+        id={`collapse-btn-${title}`}
       >
         {title}
-        <span className={`collapse-icon ${isOpen ? 'open' : ''}`}>
-          &#9660;
-        </span>{' '}
-        {/* Flèche de direction */}
+        <span className={`collapse-icon ${isOpen ? 'open' : ''}`}>&#9660;</span>
       </button>
 
-      {/* Animation du contenu */}
+      {/* Contenu conditionnellement affiché */}
       <div
         id={`collapse-content-${title}`}
         className={`collapse-content ${isOpen ? 'open' : ''}`}
         role="region"
         aria-labelledby={`collapse-btn-${title}`}
-        style={{ maxHeight: isOpen ? '200px' : '0' }} // Contrôle dynamique de la hauteur
       >
         {children}
       </div>

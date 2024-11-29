@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../../components/banner/Banner';
 import Card from '../../components/card/Card';
-import Logements from '../../datas/Logements.json';
+import logements from '../../datas/logements.json';
 import './Home.scss';
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
     <div className="home">
       <Banner />
       <div className="home-cards">
-        {Logements.map((logement) => (
+        {logements.map((logement) => (
           <Card
             key={logement.id}
             id={logement.id}

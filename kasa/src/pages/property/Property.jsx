@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import logements from '../../datas/Logements.json'; // Données des logements
+import logements from '../../datas/logements.json'; // Données des logements
 import Slideshow from '../../components/slideshow/Slideshow';
 import Collapse from '../../components/collapse/Collapse';
 import Ratings from '../../components/ratings/Ratings';
@@ -22,7 +22,7 @@ const Property = () => {
         <h1 className="property-title">{property.title}</h1>
         <p className="property-location">{property.location}</p>
 
-        {/* Div Host modifiée avec l'image dans un cercle et le nom à côté */}
+        {/* Div Host avec image et nom */}
         <div className="host">
           <div className="host-info">
             <div className="host-picture">
