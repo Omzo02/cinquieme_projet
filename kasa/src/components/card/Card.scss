@@ -6,7 +6,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
-  position: relative; // Ajout important
+  position: relative; /* Permet le positionnement de l'élément */
   transition: transform 0.3s;
 
   &:hover {
@@ -28,6 +28,22 @@
     font-weight: 700;
     font-size: 18px;
     color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); // Ajout pour améliorer la lisibilité sur l'image
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Améliorer la lisibilité sur l'image */
+  }
+}
+
+/* Media Query pour les écrans <= 768px */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Les cartes occupent toute la largeur de l'écran */
+    margin-bottom: 2px; /* Espacement entre les cartes */
+  }
+
+  /* Si les cartes sont contenues dans un wrapper, il faut s'assurer qu'elles s'affichent en colonne */
+  .card-wrapper {
+    display: flex;
+    flex-direction: column; /* Organiser les cartes en colonne sur mobile */
+    justify-content: space-between;
+    align-items: center; /* Centrer les cartes */
   }
 }

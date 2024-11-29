@@ -8,10 +8,11 @@
   .home-cards {
     display: flex;
     flex-wrap: wrap;
+
+    width: 100%; /* Utilise toute la largeur disponible de l'écran */
+    padding: 20px 20px; /* Ajuste le padding */
+    box-sizing: border-box; /* Pour inclure le padding dans la largeur totale */
     background: #f6f6f6;
-    width: 1140px;
-    padding: 50px;
-    margin: 0 auto;
     margin-top: 50px;
     left: 100px;
     border-radius: 25px;
@@ -22,19 +23,20 @@
 }
 
 @media (max-width: 768px) {
-  .home-cards {
+  .home .home-cards {
     display: flex;
     flex-direction: column;
-    background: #f6f6f6;
     width: 100%;
-    padding: 50px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 2px;
     left: 100px;
     border-radius: 25px;
     align-items: center;
     justify-content: center;
     gap: 50px;
+
+    /* Retirer le background-color pour la version mobile */
+    background: none !important; /* Utiliser !important si nécessaire */
   }
   .home {
     width: 100%;

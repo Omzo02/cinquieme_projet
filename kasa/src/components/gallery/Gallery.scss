@@ -1,12 +1,14 @@
 .gallery {
-  width: 1240px;
-  height: 829px;
-  top: 429px;
-  left: 100px;
+  width: 100%; /* Utilise la largeur complète de l'écran */
+  height: auto; /* La hauteur s'ajuste automatiquement en fonction du contenu */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px; /* Marge pour l'espacement */
+
+  /* Ajout d'un padding pour donner de l'espace autour de la galerie */
+  padding: 10px;
 
   .gallery-wrapper {
     width: 100%;
@@ -18,10 +20,10 @@
   }
 
   .gallery-image {
-    width: 340px;
-    height: 340px;
-    gap: 0px;
-    border-radius: 10px 0px 0px 0px;
+    width: 100%; /* Utilisation de 100% de la largeur pour qu'elle s'adapte */
+    max-width: 340px; /* Définir une largeur maximale pour ne pas dépasser */
+    height: auto; /* La hauteur est automatiquement ajustée */
+    border-radius: 10px;
     object-fit: cover; /* Centre et découpe l'image */
   }
 
@@ -56,5 +58,51 @@
 
   .gallery-btn:nth-of-type(2) {
     right: 20px;
+  }
+
+  /* Styles spécifiques pour les petits écrans */
+  @media (max-width: 768px) {
+    .gallery {
+      height: auto; /* Laissez la hauteur s'ajuster automatiquement sur les petits écrans */
+      padding: 0; /* Retirer l'espace supplémentaire sur les petits écrans */
+    }
+
+    .gallery-wrapper {
+      flex-direction: column; /* Disposez les images en colonne pour mieux s'adapter */
+      gap: 2px; /* Ajoutez un espacement entre les images */
+    }
+
+    .gallery-image {
+      width: 90%; /* Utilisez 90% de la largeur de l'écran pour les images */
+      max-width: 300px; /* Réduisez la taille maximale des images */
+      height: 250px; /* Donne une hauteur proportionnelle sur mobile */
+    }
+
+    .gallery-number {
+      bottom: 10px; /* Réduisez la marge en bas */
+      font-size: 12px; /* Réduisez la taille du texte pour les petits écrans */
+    }
+
+    .gallery-btn {
+      padding: 5px; /* Réduit la taille des boutons sur mobile */
+    }
+  }
+
+  /* Pour les très petits écrans, comme les téléphones en portrait */
+  @media (max-width: 480px) {
+    .gallery-image {
+      width: 100%; /* Prenez toute la largeur de l'écran sur très petits écrans */
+      height: 200px; /* Ajustez la hauteur pour éviter que les images deviennent trop petites */
+    }
+
+    .gallery-number {
+      bottom: 5px; /* Encore moins de marge en bas */
+      font-size: 10px; /* Réduit encore la taille de la police */
+    }
+
+    .gallery-btn {
+      padding: 5px;
+      font-size: 14px; /* Réduit la taille du texte dans les boutons */
+    }
   }
 }

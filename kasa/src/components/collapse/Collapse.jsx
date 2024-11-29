@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Collapse.scss';
 
-const Collapse = ({ title, children, className = '' }) => {
+const Collapse = ({ title, content, className = '' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCollapse = () => {
@@ -29,7 +29,7 @@ const Collapse = ({ title, children, className = '' }) => {
         role="region"
         aria-labelledby={`collapse-btn-${title}`}
       >
-        {children}
+        {content}
       </div>
     </div>
   );

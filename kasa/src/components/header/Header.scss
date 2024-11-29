@@ -1,28 +1,53 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espacement entre le logo et la navigation */
   align-items: center;
-  width: 1240px;
-  margin: 0 auto;
-  padding: 20px 0;
+  width: 100%; /* Utilise toute la largeur disponible de l'écran */
+  padding: 20px 20px; /* Ajuste le padding */
+  box-sizing: border-box; /* Pour inclure le padding dans la largeur totale */
 
   img {
-    width: 122px;
-    height: 39.44px;
+    width: 122px; /* Taille du logo */
+    height: auto; /* Garder les proportions du logo */
   }
 
   nav {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Espacement entre les liens de navigation */
+    align-items: center;
+  }
 
-    a {
-      font-size: 18px;
-      text-decoration: none;
-      color: #333;
+  nav a {
+    font-size: 18px; /* Taille du texte */
+    text-decoration: none;
+    color: #000000;
 
-      &:hover {
-        color: #ff6060;
-      }
+    &:hover {
+      color: #ff6060; /* Couleur au survol */
     }
+  }
+}
+
+/* Media Query pour les écrans de 768px ou moins */
+@media (max-width: 768px) {
+  .header {
+    width: 100%; /* Le header prend 100% de la largeur */
+    padding: 15px 10px; /* Ajuster le padding pour la version mobile */
+    justify-content: space-between; /* Conserver l'espacement entre le logo et la navigation */
+  }
+
+  img {
+    width: 100px; /* Réduire la taille du logo */
+    height: auto; /* Garder les proportions du logo */
+  }
+
+  nav {
+    display: flex;
+    gap: 15px; /* Réduire l'espacement entre les éléments du menu */
+    align-items: center; /* Assurer un alignement vertical */
+  }
+
+  nav a {
+    font-size: 16px; /* Réduire la taille du texte */
   }
 }
