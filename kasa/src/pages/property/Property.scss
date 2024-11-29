@@ -41,26 +41,7 @@
   border: 1px solid #ccc;
   border-top: none;
 }
-.tags-ratings {
-  display: flex;
-  justify-content: space-between; /* Espace entre les deux éléments */
-  width: 100%; /* Pour s'assurer qu'ils prennent toute la largeur du conteneur */
-}
 
-/* Conteneur pour les étoiles (ratings) à l'extrême droite */
-.ratings-container {
-  text-align: right; /* Aligne les étoiles à droite */
-  flex: end; /* Prend tout l'espace disponible à droite */
-  display: flex;
-  flex-direction: flex-end;
-}
-
-/* Conteneur pour les tags à l'extrême gauche */
-.tags-container {
-  text-align: left; /* Aligne les tags à gauche */
-  flex: start; /* Prend tout l'espace disponible à gauche */
-  margin: 0;
-}
 .collapse-buttons-container {
   display: flex;
   justify-content: space-between; /* Espace entre les deux boutons */
@@ -132,7 +113,7 @@
         font-size: 12px;
         font-weight: bold;
         padding: 5px 10px;
-        border-radius: 5px;
+        border-radius: 25px;
         text-transform: uppercase;
       }
     }
@@ -143,9 +124,11 @@
       gap: 5px;
 
       .rating-star {
+        display: flex;
         width: 20px;
         height: 20px;
         color: #ff6060;
+        align-items: end;
       }
     }
   }
