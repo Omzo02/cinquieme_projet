@@ -1,70 +1,87 @@
+@import '../../styles/Variables';
+@import '../../styles/Mixins';
+
 .slideshow {
-  position: relative; /* Nécessaire pour positionner les chevrons */
-  width: 1240px; /* Prend toute la largeur de son parent */
-  height: 415px; /* Hauteur fixe */
-  margin: 0 auto; /* Centre horizontalement */
-  border-radius: 10px; /* Coins arrondis */
-  overflow: hidden; /* Cache les débordements */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0; /* Fond par défaut (à personnaliser) */
+  position: relative;
 
-  /* Conteneur d'image */
+  width: 1240px; /* Limite la largeur du carousel à 1240px */
+  height: 415px; /* Hauteur par défaut */
+  margin: 0 auto; /* Centrer horizontalement */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: $color-tertiary;
+
   .slideshow-image-container {
-    width: 1240px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Image principale */
-  .slideshow-image {
+    @include flex(row, center, center);
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Remplit le conteneur en gardant les proportions */
   }
 
-  /* Boutons de navigation */
+  .slideshow-image {
+    width: 100%; /* L'image occupe toute la largeur du conteneur */
+    height: 100%; /* L'image occupe également toute la hauteur */
+    object-fit: cover; /* L'image couvre tout le conteneur sans déformation */
+  }
+
   .slideshow-button {
-    position: absolute; /* Nécessaire pour placer les chevrons */
-    top: 50%; /* Aligne verticalement au centre */
-    transform: translateY(-50%); /* Centre le bouton précisément */
-    background: none; /* Pas de fond */
-    border: none; /* Pas de bordure */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
     cursor: pointer;
-    z-index: 10; /* Passe au-dessus de l'image */
-    padding: 0; /* Supprime les marges internes */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 10;
+    padding: 0;
+    @include flex(row, center, center);
 
     &.left {
-      left: 20px; /* Positionnement depuis le bord gauche */
+      left: 20px;
     }
 
     &.right {
-      right: 20px; /* Positionnement depuis le bord droit */
+      right: 20px;
     }
 
-    /* Chevron */
     .slideshow-chevron {
-      width: 30px; /* Largeur des chevrons */
-      height: auto; /* Respect des proportions */
-      filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.5)); /* Ombre portée */
+      width: 30px;
+      height: auto;
+      filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.5));
     }
   }
 
-  /* Compteur d'images */
   .slideshow-counter {
     position: absolute;
-    bottom: 20px; /* Positionné en bas du carrousel */
-    left: 50%; /* Centré horizontalement */
-    transform: translateX(-50%); /* Correction du centrage */
-    color: white; /* Couleur du texte */
-    font-size: 16px; /* Taille de la police */
-    padding: 5px 10px; /* Espacement interne */
-    border-radius: 20px; /* Coins arrondis */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-primary;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+
+  /* Media Query pour les écrans <= 768px */
+  @media (max-width: 768px) {
+    height: 300px; /* Ajuster la hauteur du carrousel pour mobile */
+    max-width: 100%; /* Le carousel occupe toute la largeur de l'écran sur mobile */
+
+    .slideshow-button {
+      padding: 5px;
+
+      .slideshow-chevron {
+        width: 25px; /* Réduire la taille des flèches */
+      }
+    }
+
+    .slideshow-counter {
+      font-size: 14px; /* Réduire la taille de la police */
+      padding: 4px 8px;
+    }
+
+    .slideshow-image {
+      width: 100%; /* L'image occupe toute la largeur de l'écran */
+      height: 100%; /* L'image occupe toute la hauteur du carrousel */
+      object-fit: cover; /* Assure que l'image est bien centrée et couvre tout l'espace */
+    }
   }
 }

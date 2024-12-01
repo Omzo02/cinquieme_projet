@@ -1,5 +1,8 @@
+@import '../../styles/Variables'; /* Assurez-vous d'importer les variables si nécessaires */
+@import '../../styles/Mixins'; /* Si vous utilisez des mixins pour un meilleur style global */
+
 .home {
-  width: 1240px;
+  width: 100%; /* Utiliser toute la largeur disponible */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -8,37 +11,35 @@
   .home-cards {
     display: flex;
     flex-wrap: wrap;
-
-    width: 100%; /* Utilise toute la largeur disponible de l'écran */
-    padding: 20px 20px; /* Ajuste le padding */
-    box-sizing: border-box; /* Pour inclure le padding dans la largeur totale */
+    max-width: 1240px; /* Limite la largeur à 1240px */
+    margin: 0 auto;
+    box-sizing: border-box;
     background: #f6f6f6;
     margin-top: 50px;
-    left: 100px;
     border-radius: 25px;
     align-items: center;
     justify-content: space-between;
     gap: 50px;
+    box-sizing: border-box;
   }
-}
 
-@media (max-width: 768px) {
-  .home .home-cards {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 2px;
-    left: 100px;
-    border-radius: 25px;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
+  /* Responsivité pour tablettes et plus petits écrans */
+  @media (max-width: 768px) {
+    width: 100%; /* S'assurer que la largeur de .home est bien 100% sur mobile */
+    padding: 0 10px; /* Ajout de padding pour les petits écrans */
 
-    /* Retirer le background-color pour la version mobile */
-    background: none !important; /* Utiliser !important si nécessaire */
+    .home-cards {
+      flex-direction: column; /* Empiler les cartes en colonne */
+      margin-top: 20px; /* Réduction de la marge supérieure */
+      gap: 30px; /* Réduire l'espacement entre les cartes */
+      background: #f6f6f6;
+    }
   }
-  .home {
-    width: 100%;
+
+  /* Responsivité pour très petits écrans (mobiles) */
+  @media (max-width: 480px) {
+    .home-cards {
+      gap: 20px; /* Espacement réduit sur les très petits écrans */
+    }
   }
 }

@@ -1,13 +1,15 @@
 .card {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 30%;
   height: 340px;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
-  position: relative; /* Permet le positionnement de l'élément */
-  transition: transform 0.3s;
+  position: relative;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
@@ -16,34 +18,52 @@
   img {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   h2 {
-    z-index: 20;
     position: absolute;
-    top: 268px;
+    bottom: 20px;
     left: 20px;
-    font-weight: 700;
+    z-index: 1;
     font-size: 18px;
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Améliorer la lisibilité sur l'image */
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Améliorer la lisibilité */
   }
 }
 
-/* Media Query pour les écrans <= 768px */
+/* Wrapper pour les cartes */
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+/* Responsiveness pour les écrans <= 768px */
 @media (max-width: 768px) {
   .card {
-    width: 100%; /* Les cartes occupent toute la largeur de l'écran */
-    margin-bottom: 2px; /* Espacement entre les cartes */
+    width: 100%;
+    margin-bottom: 20px; /* Espacement entre les cartes sur mobile */
+    height: auto; /* Laisse la carte s'adapter à son contenu */
   }
 
-  /* Si les cartes sont contenues dans un wrapper, il faut s'assurer qu'elles s'affichent en colonne */
-  .card-wrapper {
-    display: flex;
-    flex-direction: column; /* Organiser les cartes en colonne sur mobile */
-    justify-content: space-between;
-    align-items: center; /* Centrer les cartes */
+  h2 {
+    font-size: 9px; /* Réduction de la taille du texte sur mobile */
+    bottom: 10px; /* Ajustement du positionnement */
+    left: 10px;
+  }
+}
+
+/* Responsiveness pour les écrans <= 500px */
+@media (max-width: 500px) {
+  .card {
+    height: 280px; /* Ajuste la hauteur pour des écrans très petits */
+  }
+
+  h2 {
+    font-size: 9px; /* Réduction de la taille pour les petits écrans */
   }
 }

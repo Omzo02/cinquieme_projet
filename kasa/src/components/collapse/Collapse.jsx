@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Collapse.scss';
 
-const Collapse = ({ title, content, className = '' }) => {
+const Collapse = ({ title, content, className = '', width = '520px' }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCollapse = () => {
@@ -9,7 +9,7 @@ const Collapse = ({ title, content, className = '' }) => {
   };
 
   return (
-    <div className={`collapse ${className}`}>
+    <div className={`collapse ${className}`} style={{ width }}>
       {/* Bouton pour ouvrir/fermer */}
       <button
         className="collapse-btn"
@@ -18,7 +18,7 @@ const Collapse = ({ title, content, className = '' }) => {
         aria-controls={`collapse-content-${title}`}
         id={`collapse-btn-${title}`}
       >
-        {title}
+        <span>{title}</span>
         <span className={`collapse-icon ${isOpen ? 'open' : ''}`}>&#9660;</span>
       </button>
 

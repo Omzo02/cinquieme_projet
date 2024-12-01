@@ -1,27 +1,93 @@
+// src/styles/Base.scss
+
+// Appliquer box-sizing: border-box globalement pour éviter des problèmes de largeur
 *,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: 'Montserrat';
-  font-style: normal;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-li {
-  list-style: none;
 }
 
 body {
-  max-width: 1440px;
-  padding-top: 40px;
+  font-family: $font-family;
+  background-color: $color-tertiary;
+  color: $color-primary;
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer {
+  background-color: $color-primary;
+  color: $color-secondary;
+  width: 100%;
   margin: 0 auto;
-  @media screen and (max-width: 500px) {
-    padding-top: 20px;
+}
+
+header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between; /* Ajout pour une meilleure gestion de l'espace */
+  }
+
+  a {
+    color: $color-secondary;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($color-secondary, 10%);
+    }
+  }
+}
+
+footer {
+  padding: 10px 0;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: $color-tertiary;
+}
+
+@media (max-width: $breakpoint-md) {
+  header,
+  footer {
+    padding: 10px 0;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  header,
+  footer {
+    padding: 15px 0;
+  }
+
+  main {
+    padding: 30px;
   }
 }

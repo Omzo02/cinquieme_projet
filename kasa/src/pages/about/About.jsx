@@ -39,6 +39,7 @@ const About = () => {
           key={index}
           title={item.title}
           content={item.content}
+          width="100%" // Largeur spécifique pour la page About
         />
       ))}
     </div>

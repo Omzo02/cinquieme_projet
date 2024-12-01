@@ -3,18 +3,25 @@ import ArrowRight from '../../assets/images/chevron_carousel_right.png';
 import ArrowLeft from '../../assets/images/chevron_carousel_left.png';
 import './Slideshow.scss';
 
-const Slideshow = ({ images }) => {
+const Slideshow = ({ images = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Gestion des clics sur "Suivant"
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
+  // Gestion des clics sur "Précédent"
   const handlePrev = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
+
+  // Si aucune image n'est disponible, on affiche un placeholder
+  if (images.length === 0) {
+    return <p className="slideshow-placeholder">Aucune image disponible</p>;
+  }
 
   return (
     <div className="slideshow">
@@ -26,7 +33,11 @@ const Slideshow = ({ images }) => {
             onClick={handlePrev}
             aria-label="Image précédente"
           >
-            <img src={ArrowLeft} alt="" className="slideshow-chevron" />
+            <img
+              src={ArrowLeft}
+              alt="Précédent"
+              className="slideshow-chevron"
+            />
           </button>
 
           <button
@@ -34,12 +45,12 @@ const Slideshow = ({ images }) => {
             onClick={handleNext}
             aria-label="Image suivante"
           >
-            <img src={ArrowRight} alt="" className="slideshow-chevron" />
+            <img src={ArrowRight} alt="Suivant" className="slideshow-chevron" />
           </button>
         </>
       )}
 
-      {/* Image Principale */}
+      {/* Image principale */}
       <div className="slideshow-image-container">
         <img
           src={images[currentIndex]}
@@ -49,9 +60,11 @@ const Slideshow = ({ images }) => {
       </div>
 
       {/* Compteur */}
-      <div className="slideshow-counter">
-        {currentIndex + 1}/{images.length}
-      </div>
+      {images.length > 1 && (
+        <div className="slideshow-counter">
+          {currentIndex + 1}/{images.length}
+        </div>
+      )}
     </div>
   );
 };

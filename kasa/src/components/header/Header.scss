@@ -1,53 +1,56 @@
-.header {
-  display: flex;
-  justify-content: space-between; /* Espacement entre le logo et la navigation */
-  align-items: center;
-  width: 100%; /* Utilise toute la largeur disponible de l'écran */
-  padding: 20px 20px; /* Ajuste le padding */
-  box-sizing: border-box; /* Pour inclure le padding dans la largeur totale */
+@import '../../styles/Mixins'; // Assurez-vous que le chemin est correct
+@import '../../styles/Variables'; // Assurez-vous que le fichier contenant les variables est bien importé
 
-  img {
-    width: 122px; /* Taille du logo */
-    height: auto; /* Garder les proportions du logo */
+.header {
+  @include flex(
+    row,
+    space-between,
+    center
+  ); // Utilisation du mixin pour aligner
+  width: 100%; // Largeur pleine
+  max-width: 1240px; // Limiter la largeur à 1240px
+  margin: 0 auto; // Centrer horizontalement
+  padding: 15px 20px; // Espacement interne
+  box-sizing: border-box; // Inclure padding et border dans la largeur totale
+  justify-content: space-between; // Espacement entre le logo et le menu
+
+  // Le logo est à gauche et le menu à droite
+  .logo {
+    width: auto;
+    max-width: 122px; // Taille maximale pour l'image
+    height: auto; // Conserve les proportions
   }
 
   nav {
-    display: flex;
-    gap: 20px; /* Espacement entre les liens de navigation */
-    align-items: center;
-  }
+    @include flex(row, center); // Alignement des liens
+    gap: 20px; // Espacement entre les liens
 
-  nav a {
-    font-size: 18px; /* Taille du texte */
-    text-decoration: none;
-    color: #000000;
-
-    &:hover {
-      color: #ff6060; /* Couleur au survol */
+    a {
+      font-size: 1rem; // Taille par défaut
+      color: #000000;
+      text-decoration: none; // Supprime le soulignement
+      &:hover {
+        color: #ff6060; // Couleur au survol
+      }
     }
   }
-}
 
-/* Media Query pour les écrans de 768px ou moins */
-@media (max-width: 768px) {
-  .header {
-    width: 100%; /* Le header prend 100% de la largeur */
-    padding: 15px 10px; /* Ajuster le padding pour la version mobile */
-    justify-content: space-between; /* Conserver l'espacement entre le logo et la navigation */
+  // Responsivité pour tablettes
+  @media (max-width: 768px) {
+    padding: 10px; // Réduction de l'espacement
+    img {
+      max-width: 100px; // Image plus petite
+    }
+    nav a {
+      font-size: 0.9rem; // Réduction de la taille de police
+    }
   }
 
-  img {
-    width: 100px; /* Réduire la taille du logo */
-    height: auto; /* Garder les proportions du logo */
-  }
-
-  nav {
-    display: flex;
-    gap: 15px; /* Réduire l'espacement entre les éléments du menu */
-    align-items: center; /* Assurer un alignement vertical */
-  }
-
-  nav a {
-    font-size: 16px; /* Réduire la taille du texte */
+  // Responsivité pour mobiles
+  @media (max-width: 500px) {
+    padding: 5px 10px; // Réduction supplémentaire
+    nav a {
+      font-size: 0.8rem; // Taille de police encore plus petite
+    }
   }
 }
