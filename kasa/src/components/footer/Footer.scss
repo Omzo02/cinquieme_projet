@@ -30,8 +30,24 @@
 
   // Styles pour écrans ≤ 768px
   @media (max-width: 768px) {
-    height: auto; // Ajuste la hauteur en fonction du contenu
+    height: 209; // Ajuste la hauteur en fonction du contenu
     padding: 20px 1rem; // Ajoute un espace intérieur pour plus d'esthétique
+
+    .footer-logo img {
+      height: 30px; // Taille réduite pour l'image
+      margin-top: 20px; // Moins d'espace en haut
+    }
+
+    p {
+      font-size: 12px; // Réduit la taille du texte
+      line-height: 28px; // Ajuste l'interligne
+      padding: 0 15px; // Ajoute une marge intérieure pour une meilleure lisibilité
+    }
+  }
+
+  // Styles pour écrans ≤ 768px
+  @media (max-width: 375px) {
+    height: 209px; // Ajuste la hauteur en fonction du contenu
 
     .footer-logo img {
       height: 30px; // Taille réduite pour l'image

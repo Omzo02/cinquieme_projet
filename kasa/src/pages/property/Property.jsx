@@ -26,7 +26,7 @@ const Property = () => {
       <div className="property-details">
         {/* Conteneur pour le titre et le propriétaire */}
         <div className="title-host-container">
-          <article className="property-info">
+          <div className="property-info">
             <div className="locality">
               <h1 className="property-title">{property.title}</h1>
               <p className="property-location">{property.location}</p>
@@ -34,10 +34,10 @@ const Property = () => {
             <div className="tags">
               <Tags tags={property.tags} />
             </div>
-          </article>
+          </div>
 
           {/* Conteneur pour le propriétaire et les notes */}
-          <article className="host-ratings">
+          <div className="host-ratings">
             <div className="host">
               <div className="host-info">
                 <div className="host-picture">
@@ -52,7 +52,7 @@ const Property = () => {
             <div className="ratings-container">
               <Ratings rating={property.rating} />
             </div>
-          </article>
+          </div>
         </div>
 
         {/* Les boutons Collapse */}

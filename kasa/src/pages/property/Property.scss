@@ -25,10 +25,8 @@
 
   .title-host-container {
     display: flex;
-
     width: 100%;
     margin-top: 20px;
-
     justify-content: space-between;
   }
 
@@ -102,7 +100,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 10px;
 
     .collapse-left,
     .collapse-right {
@@ -110,20 +108,18 @@
     }
   }
 
+  /* Media Query pour les écrans <= 1024px (tablettes) */
   @media (max-width: 1024px) {
-    /* Pour les tablettes, réduire la taille des titres */
     .property-info .locality .property-title {
-      font-size: 0.8rem;
+      font-size: 0.8rem; /* Réduction de la taille du titre pour les tablettes */
     }
 
-    /* Les tags prennent plus de place sur les petits écrans */
     .property-info .tags {
       flex-wrap: wrap;
       justify-content: flex-start;
-      gap: 10px;
+      gap: 10px; /* Réduire l'espace entre les tags sur les petits écrans */
     }
 
-    /* Ajuster les éléments de la ratings-container */
     .host-ratings .ratings-container {
       flex-direction: column;
       align-items: flex-start;
@@ -131,88 +127,123 @@
     }
   }
 
+  /* Media Query pour les écrans <= 768px */
   @media (max-width: 768px) {
     .property-details {
       padding: 20px;
-      margin-top: 10px;
-    }
+      margin-top: -2rem;
 
-    /* Le titre occupe toute la largeur et s'ajuste s'il n'y a plus de place */
-    .property-info .locality .property-title {
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
+      .title-host-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px; /* Espacement entre les sections */
+      }
 
-    /* Le paragraphe et les tags sous le titre */
-    .property-info .tags {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 15px;
-      gap: 15px;
-    }
-
-    /* Les étoiles à gauche et le host à droite */
-    .host-ratings .ratings-container {
-      display: flex;
-      justify-content: space-between;
-      width: 50%;
-      margin-top: 15px;
-    }
-
-    .host {
-      display: flex;
-      margin-bottom: 50px;
-    }
-    .host-info {
-      font-size: 1rem;
-    }
-
-    /* Les boutons collapse en colonne */
-    .collapse-buttons-container {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin-top: 30px;
-
-      .collapse-left,
-      .collapse-right {
+      .property-info {
         width: 100%;
-        margin-bottom: 10px;
+
+        .locality {
+          text-align: left;
+          //margin-top: -0.5rem;
+
+          .property-title {
+            font-size: 1rem;
+            margin-bottom: 5px;
+          }
+
+          .property-location {
+            font-size: 0.9rem;
+            color: #000000;
+          }
+        }
+
+        .tags {
+          display: flex;
+          gap: 10px;
+        }
+      }
+
+      .host-ratings {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .ratings-container {
+          display: flex;
+          margin-top: -30px;
+        }
+
+        .host {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
       }
     }
   }
 
-  @media (max-width: 480px) {
-    /* Réduire la taille de la police sur les petits écrans */
+  /* Nouvelle Media Query pour les écrans <= 480px */
+  @media (max-width: 475px) {
+    .property-details {
+      margin-top: -0.5px;
+    }
     .property-info .locality .property-title {
-      font-size: 0.7rem;
+      font-size: 1rem; /* Réduire la taille du titre */
+      margin-top: -30px; /* Réduire l'espacement sous le titre */
     }
+    .property-info {
+      width: 100%;
 
-    /* Ajuster les tags pour qu'ils soient alignés en une seule colonne */
+      .locality {
+        text-align: left;
+
+        .property-title {
+          font-size: 3rem;
+          margin-bottom: 5px;
+        }
+
+        .property-location {
+          font-size: 0.9rem;
+          color: #000000;
+        }
+      }
+
+      .tags {
+        display: flex;
+        gap: 10px;
+      }
+    }
     .property-info .tags {
-      flex-direction: row;
-      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 8px; /* Réduire l'écart entre les tags */
+      margin-top: 0px;
     }
 
-    .host-ratings .ratings-container {
-      flex-direction: column;
-      gap: 10px;
+    .carrousel-container {
+      margin-bottom: 10px; /* Réduire l'espace sous l'image du carrousel */
+    }
+  }
+}
+
+@media (max-width: 275px) {
+  .host-ratings {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .ratings-container {
+      display: flex;
+      margin-top: -30px;
+      border: 1px solid black;
+      width: 50%;
     }
 
-    .host-info {
-      font-size: 0.7rem;
-    }
-    /* Les éléments de la collapse-buttons-container sont en full-width */
-    .collapse-buttons-container {
-      flex-direction: column;
+    .host {
+      display: flex;
+      justify-content: flex-end;
       align-items: center;
-      width: 100%;
-    }
-
-    .collapse-left,
-    .collapse-right {
-      width: 100%;
     }
   }
 }
