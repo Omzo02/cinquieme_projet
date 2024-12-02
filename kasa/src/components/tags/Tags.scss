@@ -2,12 +2,37 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center; /* Centrer les éléments sur les petits écrans */
+}
 
+.tag {
+  background-color: #ff6060;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 1vw;
+  text-align: center; /* Aligne le texte au centre */
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 768px) {
   .tag {
-    background-color: #ff6060;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 1vw;
+    font-size: 12px; /* Réduit la taille du texte */
+    padding: 4px 8px; /* Réduit les espaces */
+    flex-wrap: nowrap;
+  }
+}
+
+/* Media query pour les très petits écrans */
+@media (max-width: 480px) {
+  .tag {
+    font-size: 10px; /* Réduction supplémentaire */
+    padding: 3px 6px;
+    border-radius: 2vw; /* Rond plus prononcé */
+    flex-wrap: nowrap;
+  }
+
+  .tags {
+    gap: 5px; /* Réduction de l'espace entre les tags */
   }
 }

@@ -1,10 +1,35 @@
 .ratings {
   display: flex;
-  gap: 5px;
+  gap: 5px; /* Espace initial entre les étoiles */
+  justify-content: center; /* Centrer les étoiles sur les petits écrans */
+}
 
+.rating-star {
+  width: 26px;
+  height: 26px;
+  object-fit: contain; /* Assure que l'image de l'étoile conserve ses proportions */
+}
+
+/* Media query pour les tablettes */
+@media (max-width: 768px) {
   .rating-star {
-    width: 26px;
-    height: 26px;
-    object-fit: contain; /* Assure que l'image de l'étoile reste bien dans la taille définie */
+    width: 20px; /* Réduit la taille des étoiles */
+    height: 20px;
+  }
+
+  .ratings {
+    gap: 4px; /* Réduit l'espace entre les étoiles */
+  }
+}
+
+/* Media query pour les smartphones */
+@media (max-width: 480px) {
+  .rating-star {
+    width: 16px; /* Réduction supplémentaire pour les très petits écrans */
+    height: 16px;
+  }
+
+  .ratings {
+    gap: 3px; /* Réduction supplémentaire de l'espace */
   }
 }

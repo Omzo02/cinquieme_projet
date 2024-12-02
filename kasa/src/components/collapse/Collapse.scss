@@ -3,7 +3,6 @@
   width: 100%;
   max-width: 1023px;
   margin: 20px auto;
-  text-align: left;
 }
 
 /* Bouton Collapse */
@@ -62,7 +61,6 @@
 
   /* Paragraphe dans le contenu */
   p {
-    margin: 0;
     font-size: 1rem;
     color: #000000;
   }
@@ -96,6 +94,7 @@
   .collapse-content {
     padding: 10px;
     max-width: 100%; /* Adapte la largeur */
+    font-size: 15rem;
   }
 }
 
