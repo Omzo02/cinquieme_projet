@@ -8,6 +8,8 @@ const Collapse = ({ title, content, className = '', width = '520px' }) => {
     setIsOpen((prevState) => !prevState);
   };
 
+  const isList = Array.isArray(content); // Vérifie si le contenu est un tableau
+
   return (
     <div className={`collapse ${className}`} style={{ width }}>
       {/* Bouton pour ouvrir/fermer */}
@@ -29,7 +31,17 @@ const Collapse = ({ title, content, className = '', width = '520px' }) => {
         role="region"
         aria-labelledby={`collapse-btn-${title}`}
       >
-        {content}
+        {isList ? (
+          <ul className="collapse-list">
+            {content.map((item, index) => (
+              <li key={index} className="collapse-list-item">
+                {item}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>{content}</p>
+        )}
       </div>
     </div>
   );

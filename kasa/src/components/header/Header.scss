@@ -13,7 +13,7 @@
   padding: 15px 20px; // Espacement interne
   box-sizing: border-box; // Inclure padding et border dans la largeur totale
   justify-content: space-between; // Espacement entre le logo et le menu
-
+  font-family: $font-family;
   // Le logo est à gauche et le menu à droite
   .logo {
     width: auto;
@@ -27,10 +27,17 @@
 
     a {
       font-size: 1rem; // Taille par défaut
-      color: #000000;
+      color: #000000; // Couleur de base des liens
       text-decoration: none; // Supprime le soulignement
+
       &:hover {
         color: #ff6060; // Couleur au survol
+      }
+
+      &.active {
+        font-weight: bold; // Lien actif en gras
+        color: #ff6060; // Couleur spécifique pour le lien actif
+        border-bottom: 2px solid #ff6060; // Ajout d'un soulignement spécifique pour le lien actif
       }
     }
   }
@@ -41,16 +48,24 @@
     img {
       max-width: 100px; // Image plus petite
     }
-    nav a {
-      font-size: 0.9rem; // Réduction de la taille de police
+
+    nav {
+      gap: 15px; // Réduction de l'espacement entre les liens
+      a {
+        font-size: 0.9rem; // Réduction de la taille de police
+      }
     }
   }
 
   // Responsivité pour mobiles
   @media (max-width: 500px) {
     padding: 5px 10px; // Réduction supplémentaire
-    nav a {
-      font-size: 0.8rem; // Taille de police encore plus petite
+
+    nav {
+      gap: 10px; // Réduction supplémentaire de l'espacement
+      a {
+        font-size: 0.8rem; // Taille de police encore plus petite
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 import logo from '../../assets/images/logo-header.png';
 
@@ -8,12 +8,20 @@ const Header = () => {
     <header className="header">
       <img src={logo} alt="Logo Kasa - Accueil" className="logo" />
       <nav>
-        <Link to="/" aria-label="Page d'accueil">
+        <NavLink
+          to="/"
+          aria-label="Page d'accueil"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           Accueil
-        </Link>
-        <Link to="/about" aria-label="Page À propos">
+        </NavLink>
+        <NavLink
+          to="/about"
+          aria-label="Page À propos"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           À propos
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );

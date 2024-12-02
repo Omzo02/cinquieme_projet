@@ -1,100 +1,118 @@
-/* Style du composant Collapse */
+/* Conteneur principal du Collapse */
 .collapse {
   width: 100%; /* Par défaut, occupe toute la largeur disponible */
   max-width: 1023px; /* Largeur maximale fixée */
   margin: 20px auto; /* Centre horizontalement */
-  text-align: left; /* Si nécessaire pour le contenu */
+  text-align: left; /* Aligne le texte à gauche */
 }
 
-/* Style du bouton Collapse */
+/* Bouton Collapse */
 .collapse-btn {
   display: flex;
   justify-content: space-between; /* Aligne le titre à gauche et la flèche à droite */
   align-items: center;
-  width: 100%;
-  max-width: 100%; /* Utilise 100% de la largeur disponible */
+  width: 100%; /* Prend toute la largeur disponible */
   padding: 10px;
-  background: #ff6060;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  background: #ff6060; /* Couleur de fond */
+  color: #ffffff; /* Couleur du texte */
+  border: none; /* Supprime la bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur interactif */
   font-size: 1rem;
   font-weight: bold;
 
   &:hover {
-    background: #e65555; /* Change la couleur au survol */
+    background: #e65555; /* Couleur de fond au survol */
   }
 
   &:focus {
-    outline: 2px solid #ff9999; /* Meilleure visibilité pour l'accessibilité */
+    outline: 2px solid #ff9999; /* Contour visible pour l'accessibilité */
   }
 
-  /* Alignement du titre à gauche et de la flèche à droite */
+  /* Alignement et animation de la flèche */
   span:first-child {
     margin-right: auto; /* Aligne le titre à gauche */
   }
 
   .collapse-icon {
     font-size: 1.2rem;
-    transition: transform 0.3s ease; /* Animation pour la flèche */
+    transition: transform 0.3s ease; /* Animation de la flèche */
   }
 
   .collapse-icon.open {
-    transform: rotate(
-      180deg
-    ); /* Flèche vers le haut lorsque le contenu est ouvert */
+    transform: rotate(180deg); /* Flèche vers le haut si ouvert */
   }
 }
 
 /* Contenu du Collapse */
 .collapse-content {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.3s ease;
-  padding: 0 15px;
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-top: 10px;
-  background-color: #f6f6f6;
+  overflow: hidden; /* Empêche le contenu de déborder */
+  max-height: 0; /* Hauteur initiale nulle (masquée) */
+  opacity: 0; /* Rendu invisible au départ */
+  transition: max-height 0.5s ease, opacity 0.3s ease; /* Animations fluides */
+  padding: 0 15px; /* Espacement horizontal */
+  width: 100%; /* Prend toute la largeur disponible */
+  border: 1px solid #ddd; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  margin-top: 10px; /* Espacement au-dessus */
+  background-color: #f6f6f6; /* Fond gris clair */
 
   &.open {
-    max-height: 500px; /* Ajuste cette valeur selon la taille du contenu */
-    opacity: 1;
-    padding: 15px;
+    max-height: 500px; /* Hauteur maximum ajustable selon le contenu */
+    opacity: 1; /* Contenu visible */
+    padding: 15px; /* Augmente l'espacement lorsque ouvert */
+  }
+
+  /* Paragraphe dans le contenu */
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  /* Liste dans le contenu */
+  .collapse-list {
+    list-style: none; /* Supprime les puces */
+    padding: 0; /* Supprime les marges internes */
+    margin: 0; /* Supprime les marges externes */
+
+    /* Élément de la liste */
+    .collapse-list-item {
+      margin-bottom: 10px; /* Espacement entre les éléments */
+      font-size: 1rem;
+      color: #333; /* Texte gris foncé */
+    }
   }
 }
 
-/* Responsive Design pour les petits écrans */
+/* Responsive Design : écrans moyens */
 @media (max-width: 768px) {
   .collapse-btn {
-    max-width: 100%;
     padding: 10px 15px;
     font-size: 0.9rem;
 
     .collapse-icon {
-      font-size: 1rem; /* Petite taille pour les écrans mobiles */
+      font-size: 1rem; /* Flèche plus petite */
     }
   }
 
   .collapse-content {
-    max-width: 100%;
+    max-width: 100%; /* Adapte la largeur */
   }
 }
 
+/* Responsive Design : petits écrans */
 @media (max-width: 480px) {
   .collapse-btn {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Taille plus petite pour le texte */
     padding: 10px;
 
     .collapse-icon {
-      font-size: 0.9rem; /* Plus petite flèche sur les petits écrans */
+      font-size: 0.9rem; /* Flèche encore plus petite */
     }
   }
 
   .collapse-content {
-    padding: 10px;
+    padding: 10px; /* Réduit l'espacement */
   }
 }

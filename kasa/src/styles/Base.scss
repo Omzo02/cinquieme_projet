@@ -1,4 +1,7 @@
-// src/styles/Base.scss
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+// Définir la variable pour la police
+$font-family: 'Montserrat', sans-serif;
 
 // Appliquer box-sizing: border-box globalement pour éviter des problèmes de largeur
 *,
