@@ -3,7 +3,54 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 390px);
+  height: calc(100vh - 390px); /* Hauteur dynamique */
   text-align: center;
   margin: 0 auto;
+  padding: 20px; /* Ajoute un peu de marge interne */
+
+  /* Contenu du texte (par exemple, ajustement de la taille de la police) */
+  h1 {
+    font-size: 2.5rem; /* Taille du titre */
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2rem; /* Taille du texte */
+    line-height: 1.6; /* Espacement entre les lignes */
+    max-width: 800px; /* Limite la largeur du texte pour éviter qu'il ne soit trop large */
+    margin: 0 auto; /* Centre le texte */
+  }
+}
+
+/* Responsive Design : écrans moyens */
+@media (max-width: 768px) {
+  .about {
+    height: auto; /* Laisse la hauteur s'ajuster automatiquement sur les petits écrans */
+    padding: 15px; /* Réduit l'espacement interne */
+  }
+
+  h1 {
+    font-size: 2rem; /* Taille de titre réduite pour les petits écrans */
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1rem; /* Réduit la taille du texte */
+  }
+}
+
+/* Responsive Design : petits écrans */
+@media (max-width: 480px) {
+  .about {
+    padding: 10px; /* Espacement interne encore plus réduit */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Taille du titre plus petite */
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 0.9rem; /* Texte plus petit pour les très petits écrans */
+  }
 }
