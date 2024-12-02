@@ -31,13 +31,13 @@
       text-decoration: none; // Supprime le soulignement
 
       &:hover {
-        color: #ff6060; // Couleur au survol
+        color: #000000; // Couleur au survol
       }
 
       &.active {
         font-weight: bold; // Lien actif en gras
-        color: #ff6060; // Couleur spécifique pour le lien actif
-        border-bottom: 2px solid #ff6060; // Ajout d'un soulignement spécifique pour le lien actif
+        color: #000000; // Couleur spécifique pour le lien actif
+        border-bottom: 2px solid #000000; // Ajout d'un soulignement spécifique pour le lien actif
       }
     }
   }
@@ -53,18 +53,20 @@
       gap: 15px; // Réduction de l'espacement entre les liens
       a {
         font-size: 0.9rem; // Réduction de la taille de police
+        text-transform: uppercase;
       }
     }
   }
 
   // Responsivité pour mobiles
-  @media (max-width: 500px) {
+  @media (max-width: 375px) {
     padding: 5px 10px; // Réduction supplémentaire
 
     nav {
       gap: 10px; // Réduction supplémentaire de l'espacement
       a {
         font-size: 0.8rem; // Taille de police encore plus petite
+        text-transform: uppercase; // Convertit le texte des liens en majuscules
       }
     }
   }
