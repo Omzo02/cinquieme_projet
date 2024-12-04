@@ -100,8 +100,6 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    margin-top: 10px;
-
     .collapse-left,
     .collapse-right {
       width: 48%;
@@ -145,7 +143,6 @@
 
         .locality {
           text-align: left;
-          //margin-top: -0.5rem;
 
           .property-title {
             font-size: 1rem;
@@ -181,69 +178,16 @@
         }
       }
     }
-  }
 
-  /* Nouvelle Media Query pour les écrans <= 480px */
-  @media (max-width: 375px) {
-    .property-details {
-      margin-top: -0.5px;
-    }
-    .property-info .locality .property-title {
-      font-size: 1.1rem; /* Réduire la taille du titre */
-      margin-top: -30px; /* Réduire l'espacement sous le titre */
-    }
-    .property-info {
-      width: 100%;
+    /* Modification pour les boutons collapse */
+    .collapse-buttons-container {
+      flex-direction: column; /* Empiler verticalement */
+      align-items: center; /* Centrer les boutons */
 
-      .locality {
-        text-align: left;
-
-        .property-title {
-          font-size: 3rem;
-          margin-bottom: 5px;
-        }
-
-        .property-location {
-          font-size: 1rem;
-          color: #000000;
-        }
+      .collapse-left,
+      .collapse-right {
+        width: 100%; /* Largeur à 100% */
       }
-
-      .tags {
-        display: flex;
-        gap: 10px;
-      }
-    }
-    .property-info .tags {
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 8px; /* Réduire l'écart entre les tags */
-      margin-top: 0px;
-    }
-
-    .carrousel-container {
-      margin-bottom: 10px; /* Réduire l'espace sous l'image du carrousel */
-    }
-  }
-}
-
-@media (max-width: 275px) {
-  .host-ratings {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    .ratings-container {
-      display: flex;
-      margin-top: -30px;
-      border: 1px solid black;
-      width: 50%;
-    }
-
-    .host {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
     }
   }
 }

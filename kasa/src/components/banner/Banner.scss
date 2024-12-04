@@ -50,6 +50,7 @@
 
     img {
       height: 100%; /* L'image garde la hauteur et occupe la largeur */
+      filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
     }
 
     h2 {
@@ -71,6 +72,7 @@
     img {
       height: 100%; /* Toujours 100% de la hauteur et de la largeur */
       object-position: center; /* Centrer l'image dans la zone */
+      filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
     }
 
     h2 {

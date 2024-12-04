@@ -30,8 +30,9 @@
 
   // Styles pour écrans ≤ 768px
   @media (max-width: 768px) {
-    height: 209; // Ajuste la hauteur en fonction du contenu
-    padding: 20px 1rem; // Ajoute un espace intérieur pour plus d'esthétique
+    height: 209px; // Ajuste la hauteur en fonction du contenu
+    padding: 40px 1rem; // Ajoute un espace intérieur pour plus d'esthétique
+    margin-top: -2rem;
 
     .footer-logo img {
       height: 30px; // Taille réduite pour l'image
@@ -48,6 +49,8 @@
   // Styles pour écrans ≤ 768px
   @media (max-width: 375px) {
     height: 209px; // Ajuste la hauteur en fonction du contenu
+    padding: 40px 1rem;
+    margin-top: -2rem;
 
     .footer-logo img {
       height: 30px; // Taille réduite pour l'image

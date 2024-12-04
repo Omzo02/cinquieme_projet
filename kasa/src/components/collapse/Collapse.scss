@@ -50,7 +50,6 @@
   opacity: 0;
   transition: max-height 0.5s ease, opacity 0.3s ease; /* Animations fluides */
   padding: 10px;
-  padding-top: 20px;
   width: 100%;
   background-color: #f6f6f6;
 
@@ -61,7 +60,7 @@
 
   /* Paragraphe dans le contenu */
   p {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1.2vw, 1rem); /* Taille adaptative du texte */
     color: #000000;
   }
 
@@ -74,7 +73,7 @@
     /* Élément de la liste */
     .collapse-list-item {
       margin-bottom: 10px;
-      font-size: 1rem;
+      font-size: clamp(0.8rem, 1.2vw, 1rem); /* Taille adaptative des items */
       color: #000000;
     }
   }
@@ -92,17 +91,23 @@
   }
 
   .collapse-content {
-    padding: 10px;
+    padding: 15px;
     max-width: 100%; /* Adapte la largeur */
-    font-size: 15rem;
+    p {
+      font-size: clamp(
+        0.7rem,
+        1vw,
+        0.9rem
+      ); /* Ajuste encore plus pour les écrans moyens */
+    }
   }
 }
 
 /* Responsive Design : petits écrans */
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   .collapse-btn {
     font-size: 0.8rem; /* Taille plus petite pour le texte */
-    padding: 10px;
+    padding: 15px;
 
     .collapse-icon {
       font-size: 0.9rem; /* Flèche encore plus petite */
@@ -111,5 +116,12 @@
 
   .collapse-content {
     padding: 10px; /* Réduit l'espacement */
+    p {
+      font-size: clamp(
+        0.6rem,
+        1vw,
+        0.8rem
+      ); /* Texte réduit pour petits écrans */
+    }
   }
 }
