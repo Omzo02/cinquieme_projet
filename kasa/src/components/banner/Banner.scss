@@ -66,11 +66,11 @@
 
   /* Responsive Design pour les mobiles */
   @media (max-width: 480px) {
-    height: 25vh; /* La bannière devient encore plus petite sur mobile */
+    height: 25vh;
     padding: 10px;
 
     img {
-      height: 100%; /* Toujours 100% de la hauteur et de la largeur */
+      height: 100%;
       object-position: center; /* Centrer l'image dans la zone */
       filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
     }
